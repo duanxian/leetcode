@@ -47,4 +47,18 @@ public:
         dp[root] = max(withRoot,withoutRoot);
         return dp[root];
     }
+    
+    //计算子问题过程中记录值
+    int rob(TreeNode *root, int &withRoot, int &withoutRoot){
+        if(!root) return 0;
+        int lwithRoot=0, lwithoutRoot=0, rwithRoot=0, rwithoutRoot=0;
+        
+        rob(root->left, lwithRoot, lwithoutRoot);
+        rob(root->right, rwithRoot, rwithoutRoot);
+        
+        withRoot = root->val+lwithoutRoot+rwithoutRoot;
+        withoutRoot = max(lwithRoot, lwithoutRoot)+max(rwithRoot, rwithoutRoot);
+        
+        return max(withRoot, withoutRoot);
+    }
 };
