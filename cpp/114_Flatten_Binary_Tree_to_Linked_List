@@ -9,7 +9,7 @@
  */
 class Solution {
 public:
-    //往右遍历，对于每一个有左子树的节点，将左子树接到自己下面
+    //往右遍历，对于每一个有左子树的节点，将左子树接到自己和右子树之间
     void flatten(TreeNode* root) {
         while(root){
             if(root->left){
