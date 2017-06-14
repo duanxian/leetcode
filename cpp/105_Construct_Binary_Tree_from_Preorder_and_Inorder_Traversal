@@ -12,7 +12,7 @@ public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         return buildTree(preorder, 0, preorder.size()-1, inorder, 0, inorder.size()-1);
     }
-    //前序的第一个数就是root结点的值，先建立root，在中序里找到root的位置，左右两边分别为左右子树，分别用左右子树的前序和中序就可以建立子树
+
     TreeNode* buildTree(vector<int> &preorder, int lp, int rp, vector<int> &inorder, int li, int ri){
         if(lp>rp) return NULL;
         TreeNode *root = new TreeNode(preorder[lp]);
