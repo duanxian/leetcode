@@ -1,0 +1,20 @@
+class Solution {
+public:
+    //尽量满足需求小的孩子
+    int findContentChildren(vector<int>& g, vector<int>& s) {
+        sort(g.begin(), g.end());
+        sort(s.begin(), s.end());
+        int i=0, j=0;
+        while(i<g.size()){
+            while(j<s.size()&&s[j]<g[i]) j++;
+            if(j<s.size()){
+                i++;
+                j++;
+            }
+            else{
+                break;
+            }
+        }
+        return i;
+    }
+};
