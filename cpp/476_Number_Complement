@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findComplement(int num) {
+        //~11111000 ^ 00000101 = 00000010 
         unsigned int prefix = 1<<31;
         cout << (num&prefix) << endl;
         while((num&prefix)==0)
