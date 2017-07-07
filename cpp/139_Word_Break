@@ -3,6 +3,7 @@ public:
     bool wordBreak(string s, vector<string>& wordDict) {
         if(wordDict.size()==0) return false;
         sort(wordDict.begin(), wordDict.end());
+        //dp[i]=true表示s[0..i-1]能在wordDict找到对应的组合
         vector<bool> dp(s.size()+1, false);
         dp[0] = true;
         
