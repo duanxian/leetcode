@@ -17,7 +17,7 @@ public:
         return ret;
     }
     
-    
+    //中序遍历，prev记录前一节点，通过它来得到根节点值得数量
     void inorder(TreeNode *root){
         if(root==NULL) return;
         inorder(root->left);
