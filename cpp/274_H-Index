@@ -12,4 +12,27 @@ public:
         }
         return n-i-1;
     }
+    
+    //bucket sort
+    int hIndex(vector<int>& citations) {
+        int n = citations.size();
+        vector<int> bucket(n+1, 0);
+        for(int a:citations){
+            if(a>=n){
+                bucket[n]++;
+            }
+            else{
+                bucket[a]++;
+            }
+        }
+        int sum = 0;
+        for(int i=n;i>=0;--i){
+            sum += bucket[i];
+            if(sum>=i){
+                return sum;
+            }
+        }
+        
+        return 0;
+    }
 };
